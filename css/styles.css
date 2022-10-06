@@ -10,6 +10,7 @@ html {
 
 :root {
   --accent-color: #757575;
+  --gray-color: #2F303A;
   --title-text-color: #212121;
   --white-color: #ffffff;
   --bg-white-color: #f5f4fa;
@@ -25,10 +26,9 @@ body {
 }
 
 .container {
-  width: 1230px;
+  width: 1200px;
   margin: 0 auto;
   padding: 0 15px;
-  outline: 2px solid tomato;
 }
 
 .list {
@@ -39,9 +39,18 @@ body {
 
 /* header------------------------------------------ */
 .page-header {
-  background-color: aqua;
   padding-top: 24px;
   padding-bottom: 25px;
+}
+
+.div-header {
+  display: flex;
+  align-items: center;
+}
+
+.page-nav {
+  display: flex;
+  align-items: center;
 }
 
 .logo {
@@ -58,12 +67,21 @@ body {
   color: var(--blue-color);
 }
 
+.site-nav {
+  display: flex;
+  margin-left: 93px;
+}
+
 .header-link {
   color: var(--title-text-color);
   text-decoration: none;
   font-weight: 500;
   line-height: 1.14;
   letter-spacing: 0.02em;
+}
+
+.site-nav > .item:not(:last-child) {
+  margin-right: 50px;
 }
 
 .current {
@@ -75,12 +93,20 @@ body {
   color: var(--blue-color);
 }
 
+.div-auth {
+  margin-left: auto;
+}
+
 .auth-nav {
   color: currentColor;
   text-decoration: none;
   font-weight: 500;
   line-height: 1.14;
   letter-spacing: 0.02em;
+}
+
+.auth-nav:not(:last-child) {
+  margin-right: 50px;
 }
 
 .auth-nav:hover,
@@ -90,13 +116,14 @@ body {
 
 /* service------------------------------------------ */
 .service {
-  background-color: gold;
+  background-color: var(--gray-color);
   text-align: center;
   padding-top: 200px;
   padding-bottom: 200px;
 }
 
 .service-title {
+  color: var(--white-color);
   font-weight: 900;
   font-size: 44px;
   line-height: 1.36;
@@ -123,7 +150,6 @@ body {
 
 /* benefits------------------------------------------ */
 .benefits {
-  background-color: aqua;
   padding-top: 94px;
   padding-bottom: 94px;
 }
@@ -131,6 +157,18 @@ body {
 .benefits-title {
   margin-top: 0;
   margin-bottom: 0;
+}
+
+.benefits-list {
+  display: flex;
+}
+
+.benefits-item {
+  width: calc((100% - 90px) / 4);
+}
+
+.benefits-item:not(:last-child) {
+  margin-right: 30px;
 }
 
 .benefits-subject {
@@ -149,7 +187,6 @@ body {
 
 /* activity------------------------------------------ */
 .activity {
-  background-color: gold;
   padding-bottom: 94px;
 }
 
@@ -163,9 +200,17 @@ body {
   margin-bottom: 50px;
 }
 
+.div-activity {
+  display: flex;
+}
+
+.activity-img:not(:last-child) {
+  margin-right: 30px;
+}
+
 /* team------------------------------------------ */
 .team {
-  background-color: aqua;
+  background-color: var(--bg-white-color);
   padding-top: 94px;
   padding-bottom: 94px;
 }
@@ -180,8 +225,20 @@ body {
   margin-bottom: 50px;
 }
 
+.team-list {
+  display: flex;
+}
+
 .team-item {
   background-color: var(--white-color);
+  border-radius: 0px 0px 4px 4px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12),
+   0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.team-item + .team-item {
+  margin-left: 30px;
 }
 
 .team-img {
@@ -205,13 +262,31 @@ body {
 
 /* footer------------------------------------------ */
 .page-footer {
-  background-color: gold;
   padding-top: 60px;
   padding-bottom: 60px;
+  background-color: var(--gray-color);
 }
 
 .page-footer .logo {
-  margin-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.logo-studio {
+  color: var(--white-color);
+}
+
+.footer-address {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-address > .address {
+  color: var(--white-color);
+}
+
+.footer-link + .footer-link {
+  color: rgba(255, 255, 255, 0.6);
+  margin-top: 9px;
 }
 
 .footer-link {
@@ -230,7 +305,13 @@ body {
 }
 
 .portfolio-list {
+  display: flex;
   margin-bottom: 50px;
+  justify-content: center;
+}
+
+.portfolio-item + .portfolio-item {
+  margin-left: 8px;
 }
 
 .portfolio-button {
@@ -240,7 +321,8 @@ body {
   font-size: 16px;
   line-height: 1.62;
   text-align: center;
-  border: none;padding: 6px 22px;
+  border: none;
+  padding: 6px 22px;
   min-width: 73px;
   border-radius: 4px;
 }
@@ -249,6 +331,23 @@ body {
 .portfolio-button:focus {
   color: var(--white-color);
   background-color: var(--blue-color);
+}
+
+.portfolio-items {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.item-port {
+  border: 1px solid #EEEEEE;
+}
+
+.item-port:not(:nth-child(3n)) {
+  margin-right: auto;
+}
+
+.item-port:not(:nth-last-child(-n + 3)) {
+  margin-bottom: 30px;
 }
 
 .portfolio-link {
@@ -260,6 +359,7 @@ body {
 }
 
 .portfolio-title {
+  margin-left: 24px;
   color: var(--title-text-color);
   font-weight: 700;
   font-size: 18px;
@@ -270,6 +370,7 @@ body {
 }
 
 .portfolio-text {
+  margin-left: 24px;
   color: var(--accent-color);
   font-size: 16px;
   line-height: 1.88;
